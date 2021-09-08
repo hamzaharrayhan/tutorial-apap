@@ -1,3 +1,3 @@
 # Tutorial APAP
 ## Authors
-* **<Nama Lengkap di SIAK-NG>** - *<NPM>* - *<Kelas>*
+* **Hamzah Daffa Arrayhan** - *1906307302* - *C*
