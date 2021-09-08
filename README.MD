@@ -1,3 +1,44 @@
 # Tutorial APAP
 ## Authors
 * **Hamzah Daffa Arrayhan** - *1906307302* - *C*
+
+---
+## Tutorial 1
+### What I have learned today
+(Masukkan pertanyaan yang diikuti jawaban di setiap nomor, contoh seperti dibawah. Anda
+juga boleh menambahkan catatan apapun di bagian ini)
+### Github
+1. Apa itu Issue Tracker? Apa saja masalah yang dapat diselesaikan dengan Issue Tracker?
+Issue digunakan untuk melakukan tracking mengenai pekerjaan yang dilakukan di github saat proses pengembangan. Github issues merupakan sebuah alat yang terintegrasi dengan github repository yang dapat digunakan untuk fokus terhadap tugas-tugas yang penting, serta agar tetap pada rencana.
+
+2. Apa perbedaan dari git merge dan git merge --squash?
+Squash merge adalah salah satu opsi dalam melakukan merging di Git yang akan membuat sebuah merge commit dengan hanya 1 parent. File akan digabungkan sebagaimana pada git merge biasa, namun commit metadata akan berubah untuk menunjukan bahwa hanya satu dari parent mengcommit. Hasilnya adalah sebuah commit pada target branch dengan seluruh perubahan pada git merge biasa.
+ 
+3. Apa keunggulan menggunakan Version Control System seperti Git dalam pengembangan
+suatu aplikasi?
+Lebih mudah dilacak, karena kita mendapatkan semua history dan bukti dari setipa revisi pekerjaan yang dilakukan selama proses pengembangan. Memiliki riwayat dokumen, dimana developer dapat dengan mudah memahami informasi mengenai pekerjaan, juga memiliki dampak bagi developer yang bekerja pada versi terbaru. Fitur branch dan merge juga sangat membantu dalam mengatur pekerjaan individu dan pekerjaan kelompok, sehingga perubahan dan pekerjaan yang dilakukan dapat ditinjau ulang sebelum digabungkan dengan pekerjaan berikutnya ataupun pekerjaan orang lain.
+
+### Spring
+4. Apa itu library & dependency?
+Library adalah sekumpulan implementasi behavior yang ditulis dalam bahasa pemrograman dan terorganisasi sedemikian rupa agar bisa digunakan oleh banyak program yang tidak memiliki hubungan langsung satu sama lainnya. Sementara itu, jika suatu program  menggunakan suatu library, dapat dikatakan bahwa library tersebut adalah dependency dari program yang menggunakannya. Atau ketika kita memiliki sebuah program dan program tersebut membutuhkan program lain untuk bekerja, maka program lain tersebut adalah dependency.
+
+5. Apa itu Maven? Mengapa kita menggunakan Maven? Apakah ada alternatif dari Maven?
+Maven adalah sebuah project management tool yang berbasiskan project object model yang digunakan untuk membangun projek, dependency, dan documentation. Maven mensimplifikasi proses buil seperti ANT. Singkatnya, maven adalah alat yang digunakan untuk membangun dan mengatur proyek java menjadi lebih mudah.
+
+6. Selain untuk pengembangan web, apa saja yang bisa dikembangkan dengan Spring
+framework?
+Selain untuk mengembangkan web, spring framework juga dapat digunakan untuk membangun aplikasi, mengatur integrasi database, mailer, remote access dan lain sebagainya.
+
+7. Apa perbedaan dari @RequestParam dan @PathVariable? Kapan sebaiknya
+menggunakan @RequestParam atau @PathVariable?
+@RequestParam digunakan untuk membaca form data dan mengikat secara otomatis kepada parameter yang ada pada metode yang tersedia. @PathVariable adalah anotasi yang mengindikasikan bahwa parameter method harus terkait dengan URI template variable. Gunakan @RequestParam untuk mendapatkan query parameter, gunakan @PathVariable untuk mengekstrak value dari URI.
+
+### What I did not understand
+(tuliskan apa saja yang kurang Anda mengerti, Anda dapat men-_check_ apabila Anda
+sudah mengerti dikemudian hari, dan tambahkan tulisan yang membuat Anda mengerti)
+- [ ] Kenapa saya harus belajar APAP?
+- [x] Kenapa?
+Karena …
+(Anda dapat membuat tampilan code dalam README.md menjadi lebih baik. Cari tahu
+lebih dalam tentang penulisan README.md di GitHub pada link
+[berikut](https://help.github.com/en/articles/basic-writing-and-formatting-syntax))
