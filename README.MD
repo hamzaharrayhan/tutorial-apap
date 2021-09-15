@@ -64,4 +64,5 @@ Mengakses route mapping ke http://localhost:8080/bioskop/view?idBioskop=1 setela
 Pertanyaan 5: Tambahkan 1 contoh Bioskop lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/bioskop/viewall, apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.
 
 Berisikan seluruh isi List bioskop yang sebelumnya telah dibuat.
+![image](https://user-images.githubusercontent.com/61260701/133473137-c1f7ec66-cb91-4c33-92b8-05d2779950b1.png)
 
