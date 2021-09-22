@@ -2,8 +2,7 @@
 ## Authors
 * **Hamzah Daffa Arrayhan** - *1906307302* - *C*
 
----
-## Tutorial 1
+# Lab 1
 ### What I have learned today
 (Masukkan pertanyaan yang diikuti jawaban di setiap nomor, contoh seperti dibawah. Anda
 juga boleh menambahkan catatan apapun di bagian ini)
@@ -42,3 +41,28 @@ Karena …
 (Anda dapat membuat tampilan code dalam README.md menjadi lebih baik. Cari tahu
 lebih dalam tentang penulisan README.md di GitHub pada link
 [berikut](https://help.github.com/en/articles/basic-writing-and-formatting-syntax))
+
+# Lab 2
+Pertanyaan 1: Cobalah untuk menambahkan sebuah Bioskop dengan mengakses link berikut: http://localhost:8080/bioskop/add?idBioskop=1&namaBioskop=Bioskop%20PAPA%20 APAP&alamat=Maung%20Fasilkom&noTelepon=081xxx&jumlahStudio=10
+Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi
+
+Yang terjadi adalah whitespace error, Karena belum terdapat template untuk di render.
+
+Pertanyaan 2: Menurut kamu anotasi @Autowired pada class Controller tersebut merupakan implementasi dari konsep apa? Dan jelaskan secara singkat cara kerja @Autowired tersebut dalam konteks service dan controller yang telah kamu buat
+
+@Autowired memungkinkan Spring untuk meresolve dan inject beans yang saling berkolaborasi pada suatu bean. Dengan @autowired, dimungkinkan injeksi dependency otomatis. Oleh karena itu, dengan mendeklarasikan seluruh dependency bean pada file konfigurasi Spring, Spring container dapat melakukan hubungan autowire diantara beans yang berkolaborasi.
+
+Pertanyaan 3: Cobalah untuk menambahkan sebuah Bioskop dengan mengakses link berikut: http://localhost:8080/bioskop/add?idBioskop=1&namaBioskop=Bioskop%20PAPA%20 APAP&alamat=Maung%20Fasilkom&noTelepon=081xxx Apa yang terjadi?
+Jelaskan mengapa hal tersebut dapat terjadi.
+
+Gagal membuka halaman template add-bioskop.html dikarenakan tidak sesuai dengan routing di @RequestMapping. Hal tersebut terjadi karena terdapat route yang tidak diisi, yaitu jumlahStudio yang juga terdapat pada parameter method addBioskop yang bersifat required di controller.
+
+Pertanyaan 4: Jika Papa APAP ingin melihat Bioskop dengan nama Bioskop Maung, link apa yang harus diakses?
+
+Mengakses route mapping ke http://localhost:8080/bioskop/view?idBioskop=1 setelah melakukan addBioskop.
+
+Pertanyaan 5: Tambahkan 1 contoh Bioskop lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/bioskop/viewall, apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.
+
+Berisikan seluruh isi List bioskop yang sebelumnya telah dibuat
+![image](https://user-images.githubusercontent.com/61260701/133473137-c1f7ec66-cb91-4c33-92b8-05d2779950b1.png)
+
