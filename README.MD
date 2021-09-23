@@ -66,3 +66,32 @@ Pertanyaan 5: Tambahkan 1 contoh Bioskop lainnya sesukamu. Lalu cobalah untuk me
 Berisikan seluruh isi List bioskop yang sebelumnya telah dibuat
 ![image](https://user-images.githubusercontent.com/61260701/133473137-c1f7ec66-cb91-4c33-92b8-05d2779950b1.png)
 
+# Lab 3
+1. Tolong jelaskan secara singkat apa kegunaan dari anotasi-anotasi yang ada pada model (@AllArgsConstructor, @NoArgsConstructor, @Setter, @Getter, @Entity, @Table)
+@AllArgsConstructor Untuk membuat class constructor yang terikat dengan parameter keseluruhan atribut
+@NoArgsConstructor Untuk membuat class constructor yang terikat dengan parameter kosong
+@Setter Untuk menghasilkan setter method di suatu class untuk semua atribut yang terdapat didalamnya
+@Getter Untuk Untuk membuat getter method di suatu class untuk semua atribut yang terdapat didalamnya
+@Entity Adalah sebagai entity di JPA
+@Table Adalah sebagai pembentuk tabel SQL
+
+2. Pada class BioskopDB, terdapat method findByNoBioskop, apakah kegunaan dari method
+tersebut?
+Adalah untuk melakukan pencarian data di database berdasarkan kolom noBioskop
+
+3. Jelaskan perbedaan kegunaan dari anotasi @JoinTable dan @JoinColumn
+@JoinColumn digunakan ketika kita ingin menggabungkan sebuah kolom dengan sebuah tabel berbeda
+@JoinTable digunakan untuk menggabungkan semua atribut di tabel lain membentuk suatu tabel baru
+
+4. Pada class PenjagaModel, digunakan anotasi @JoinColumn pada atribut bioskop, apa
+kegunaan dari name, referencedColumnName, dan nullable dalam anotasi tersebut? dan apa
+perbedaan nullable dan penggunaan anotasi @NotNull
+name, adalah sebagai nama kolom yang dijadikan atribut pada tabel PenjagaModel
+referencedColumnName, adalah sebagai kolom yang menjadi referensi atau foreign key suatu kolom tersebut
+nullable, adalah sebuah penanda bahwa suatu atribut tersebut merupakan referenced ke tabel lain dan boleh bernilai null
+Perbedaan nullable dan @NotNull yaitu adalah @NotNull tidak akan dapat mengeksekusi SQL jika terdapat pelanggaran, namun nullable akan tetap berjalan, dan baru gagal jika ada pelanggaran constraintnya.
+
+5. Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL, dan FetchType.EAGER
+FetchType.LAZY, melakukan data load berdasarkan data yang dibutuhkan saja
+FetchType.EAGER, mengambil semua data yang ada, baik digunakan ataupun tidak
+CascadeType.ALL, untuk menandakan bahwa suatu atribut yang dikenakan tindakan seperti (REMOVE, MERGE, REFRESH, dsb) akan mengalami pengaruh ke semua entiti yang memiliki hubungan ke atribut tersebut
