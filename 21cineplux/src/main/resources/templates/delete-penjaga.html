@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Bioskop by ID</title>
+</head>
+<body>
+<h2>Delete Bioskop by ID</h2>
+<h3 th:text="'Penjaga dengan Id ' + ${penjaga.noPenjaga} + ', bernama ' + ${penjaga.namaPenjaga} + ' telah dihapus'"></h3>
+<a th:href="@{/bioskop/view(noBioskop=${penjaga.bioskop.noBioskop})}">Kembali</a>
+</body>
+</html>

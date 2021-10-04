@@ -12,9 +12,9 @@
     <div class="card m-4 p-4">
         <div class="card-body">
             <div class="justify-content-center">
-                <h2 th:text="'Bioskop dengan nomor bioskop ' + ${noBioskop} + ' berhasil ditambahkan.'"></h2>
+                <h2 th:text="'Penjaga dengan nomor penjaga ' + ${penjaga.noPenjaga} + ' berhasil diubah.'"></h2>
                 <br>
-                <a class="btn btn-primary" href="/">Home</a>
+                <a class="btn btn-primary" th:href="@{/bioskop/view(noBioskop=${penjaga.bioskop.noBioskop})}">Kembali</a>
             </div>
         </div>
     </div>
@@ -22,12 +22,4 @@
 
 </body>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Add Bioskop</title>
-</head>
-<body>
-<h2 th:text="'Bioskop dengan id bioskop ' + ${idBioskop} + ' berhasil ditambahkan'"></h2>
-<a href="/bioskop/viewall">kembali</a>
-</body>
 </html>
