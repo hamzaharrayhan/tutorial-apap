@@ -16,3 +16,7 @@ public interface BioskopService {
     boolean waktuBenar(BioskopModel bioskop);
     boolean cekPenjaga(BioskopModel bioskop);
 }
+    List<BioskopModel> getBioskopList();
+    BioskopModel getBioskopByIdBioskop(String idBioskop);
+
+}
