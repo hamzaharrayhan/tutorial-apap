@@ -95,3 +95,20 @@ Perbedaan nullable dan @NotNull yaitu adalah @NotNull tidak akan dapat mengeksek
 FetchType.LAZY, melakukan data load berdasarkan data yang dibutuhkan saja
 FetchType.EAGER, mengambil semua data yang ada, baik digunakan ataupun tidak
 CascadeType.ALL, untuk menandakan bahwa suatu atribut yang dikenakan tindakan seperti (REMOVE, MERGE, REFRESH, dsb) akan mengalami pengaruh ke semua entiti yang memiliki hubungan ke atribut tersebut
+
+# Lab 5
+**1.Apa itu Postman? Apa kegunaannya?**
+
+Postman adalah apikasi yang berfungsi untuk melakukan pengujian API. Postman digunakan dalam proses untuk menguji API, beberapa kelebihan Postman yaitu:
+Ramah pengguna, memilik tampilan yang mudah digunakan sehingga pengguna dapat menggunakannya dengan mudah. Selain itu juga ada faktor aksesibilitas yang dapat digunakan oleh pengguna melalui berbagai device. Beberapa fungsi dalam Postman yaitu metode HTTP, penyimpanan, Konversi API, juga pembuatan environment pengembangan API.
+
+**2. Jelaskan fungsi dari anotasi @JsonIgnoreProperties dan @JsonProperty.**
+
+@JsonIgnoreProperties
+Berguna pada suatu kelas untuk memberikan properti untuk diabaikan
+
+@JsonProperty
+Berguna untuk memberikan tanda pengambilan metode yang tidak terstandar untuk properti json
+
+**3. Apa kegunaan atribut WebClient?**
+Menyediakan metode untuk mengirimkan data atau menerima data dari lokal, intranet maupun internet yang dapat diidentifikasi oleh URI
