@@ -15,48 +15,46 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter @Getter
+@Setter
+@Getter
 @Entity
 @Table(name = "bioskop")
 public class BioskopModel implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long noBioskop;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long noBioskop;
 
-    @NotNull
-    @Size(max = 30)
-    @Column(nullable = false)
-    private String namaBioskop;
+  @NotNull
+  @Size(max = 30)
+  @Column(nullable = false)
+  private String namaBioskop;
 
-    @NotNull
-    @Column(nullable = false)
-    private String alamatBioskop;
+  @NotNull
+  @Size(max = 50)
+  @Column(nullable = false)
+  private String alamatBioskop;
 
-    @NotNull
-    @Column(nullable = false)
-    private Integer jumlahStudio;
+  @NotNull
+  @Column(nullable = false)
+  private Integer jumlahStudio;
 
-    @NotNull
-    @Column(nullable = false)
-    @DateTimeFormat(pattern = "HH:mm")
-    private LocalTime waktuBuka;
+  @NotNull
+  @Column(nullable = false)
+  @DateTimeFormat(pattern = "HH:mm")
+  private LocalTime waktuBuka;
 
-    @NotNull
-    @Column(nullable = false)
-    @DateTimeFormat(pattern = "HH:mm")
-    private LocalTime waktuTutup;
+  @NotNull
+  @Column(nullable = false)
+  @DateTimeFormat(pattern = "HH:mm")
+  private LocalTime waktuTutup;
 
-    @OneToMany(mappedBy = "bioskop", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<PenjagaModel> listPenjaga;
+  // Relasi dengan PenjagaModel
+  @OneToMany(mappedBy = "bioskop", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  private List<PenjagaModel> listPenjaga;
 
-    @ManyToMany
-    @JoinTable(
-            name = "film_bioskop",
-            joinColumns = @JoinColumn(name = "no_bioskop"),
-            inverseJoinColumns = @JoinColumn(name = "no_film")
-    )
-
-    List<FilmModel> listFilm;
-
+  // Relasi dengan FilmModel
+  @ManyToMany
+  @JoinTable(name = "film_bioskop", joinColumns = @JoinColumn(name = "no_bioskop"), inverseJoinColumns = @JoinColumn(name = "no_film"))
+  List<FilmModel> listFilm;
 }

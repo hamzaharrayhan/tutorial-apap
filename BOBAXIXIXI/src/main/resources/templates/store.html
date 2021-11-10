@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+
+
+<body>
+<div class="d-flex flex-column" style="background-color: sandybrown; height: 100vh">
+    <nav th:replace="fragments/fragment :: navbar"></nav>
+    <div style="padding: 20px">
+
+        <a class="btn btn-primary" style="background-color: saddlebrown;color: white" href="/store/add">Add Store</a>
+
+        <div style="margin-bottom: 40px"></div>
+        <table class="table">
+            <thead class="table-light" style="background-color: #491217">
+            <tr style="color: white">
+                <th>No</th>
+                <th>Store Code</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Operational Hour</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="store : ${listStore}" style="background-color: #ffe8a1">
+                <td th:text="${store.idStore}"></td>
+                <td th:text="${store.storeCode}"></td>
+                <td th:text="${store.name}"></td>
+                <td th:text="${store.address}"></td>
+                <td th:text="${store.openHour} + ' - ' + ${store.closeHour}"></td>
+                <td>
+                    <a class="btn btn btn-outline-primary" th:href="@{/store/view/} + ${store.idStore}">View</a>
+                    <a class="btn btn-primary" th:href="@{/store/update/} + ${store.idStore}">Update</a>
+                    <a class="btn btn-danger" th:href="@{/store/delete/} + ${store.idStore}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

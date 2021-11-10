@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <title>View Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+
+<body style="background: #FAEBD7">
+<nav th:replace="fragments/fragment :: navbar"></nav>
+<div class="container">
+    <div class="card m-4 p-4">
+        <div class="card-body">
+            <div class="justify-content-center">
+                <h2 style="text-align: center">Store Detail</h2>
+                <br>
+                <div style="display: flex;">
+                    <div style="display: flex; margin-right: 10vh">
+                        <p style="font-weight: bold; margin-right: 20px" th:text="'Store Name : '"><p th:text="' '+${store.name}"></p></p>
+                    </div>
+                    <div style="display: flex">
+                        <p style="font-weight: bold; margin-right: 20px" th:text="'Store Code : '"><p th:text="' '+${store.storeCode}"></p></p>
+                    </div>
+                </div>
+                <div style="display: flex">
+                    <p style="font-weight: bold; margin-right: 20px" th:text="'Address : '"><p th:text="' '+${store.address}"></p></p>
+                </div>
+                <div style="display: flex">
+                    <p style="font-weight: bold; margin-right: 20px" th:text="'Open Hour : '"><p th:text="' '+${store.openHour}"></p></p>
+                </div>
+                <div style="display: flex">
+                    <p style="font-weight: bold; margin-right: 20px" th:text="'Close Hour : '"><p th:text="' '+${store.closeHour}"></p></p>
+                </div>
+                <div style="display: flex">
+                    <p style="font-weight: bold; margin-right: 20px" th:text="'Manager : '"><p th:text="' '+${store.manager.getFullName()}"></p></p>
+                </div>
+                <div th:if="*{listBoba.size() != 0}">
+                    <table class="table">
+                        <thead>
+                        <tr style="background: #6D4C41;color: white">
+                            <th style="font-weight: bold">No</th>
+                            <th style="font-weight: bold">Name</th>
+                            <th style="font-weight: bold">Topping</th>
+                            <th style="font-weight: bold">Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="boba, iterationStatus : ${listBoba}"
+                            th:style="${iterationStatus.even} ? 'font-weight:bold;'">
+                            <td th:text="${boba.idBobaTea}"></td>
+                            <td th:text="${boba.name}"></td>
+                            <td th:text="${boba.topping.name}"></td>
+                            <td th:text="${boba.price}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div th:unless="*{listBoba.size() != 0}">
+                    <h2 style="text-align: center" th:text="'No Boba Assigned'"></h2>
+                </div>
+                <div style="text-align: center">
+                    <a class="btn btn-warning" th:href="@{/store/} + ${store.idStore} + @{/assign-boba/}">+ Add Boba to Store</a>
+                </div>
+                <br>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

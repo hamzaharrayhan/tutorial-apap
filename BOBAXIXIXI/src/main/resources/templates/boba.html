@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+
+
+<body>
+<div class="d-flex flex-column" style="background-color: sandybrown; height: 100vh">
+    <nav th:replace="fragments/fragment :: navbar"></nav>
+    <div style="padding: 20px">
+
+        <a class="btn btn-primary" style="background-color: saddlebrown;color: white" href="/boba/add">Add Boba Tea</a>
+
+        <div style="margin-bottom: 40px"></div>
+        <table class="table">
+            <thead class="table-light" style="background-color: #491217">
+            <tr style="color: white">
+                <th>No</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Size</th>
+                <th>Ice</th>
+                <th>Sugar</th>
+                <th>Topping</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="background-color: #ffe8a1" th:each="boba : ${listBobaTea}">
+                <td th:text="${boba.idBobaTea}"></td>
+                <td th:text="${boba.name}"></td>
+                <td th:text="${boba.price}"></td>
+                <td th:text="${boba.size}"></td>
+                <td th:text="${boba.ice_level}"></td>
+                <td th:text="${boba.sugar_level}"></td>
+                <td th:text="${boba.topping.name}"></td>
+                <td>
+                    <a class="btn btn btn-outline-primary" th:href="@{/boba/} + ${boba.idBobaTea} + '/assign-store'">Assign</a>
+                    <a class="btn btn-primary" th:href="@{/boba/update/} + ${boba.idBobaTea}">Update</a>
+                    <a class="btn btn-danger" th:href="@{/boba/delete/} + ${boba.idBobaTea}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

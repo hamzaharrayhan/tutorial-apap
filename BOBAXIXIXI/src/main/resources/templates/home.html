@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+
+<style>
+    .form-inline{
+        display: flex;
+        justify-content: center;
+
+    }
+    .form-inline .form-group {
+        margin-right:16px;
+
+    }
+
+</style>
+
+<body>
+
+
+<div class="d-flex flex-column" style="background-color: sandybrown; height: 100vh">
+    <nav th:replace="fragments/fragment :: navbar"></nav>
+    <div class="" style="padding-left: 80px; padding-right: 80px; padding-top: 80px">
+        <div class="jumbotron mx-auto" style="background-color: #8b4513">
+            <h1 class="display-4 text-center" style="color: white"><b>WELCOME TO BOBAXIXIXI</b></h1>
+        </div>
+    </div>
+    <form class="form-inline" role="form">
+        <div class="form-group">
+            <a type="button" class="btn btn-outline-primary" style="background-color: saddlebrown; color: white" href="/store">Store</a>
+        </div>
+        <div class="form-group" >
+            <a type="button" class="btn btn-outline-primary" style="background-color: saddlebrown; color: white" href="/boba">Boba Tea</a>
+        </div>
+        <div class="form-group" >
+            <a type="button" class="btn btn-outline-primary" style="background-color: saddlebrown; color: white" href="/search">Search</a>
+        </div>
+        <div class="form-group" >
+            <a type="button" class="btn btn-outline-primary" style="background-color: saddlebrown; color: white" href="/filter">Filter</a>
+        </div>
+    </form>
+</div>
+
+
+
+</body>
+</html>

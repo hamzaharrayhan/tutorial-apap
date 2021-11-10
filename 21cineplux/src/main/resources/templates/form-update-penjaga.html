@@ -12,29 +12,32 @@
     <div class="card m-4 p-4">
         <div class="card-body">
             <div class="justify-content-center">
-                <h2>Update Bioskop</h2>
+                <h2>Update Penjaga</h2>
                 <br>
                 <form th:action="@{/penjaga/update}" th:object="${penjaga}" method="POST">
-                    <input type="hidden" th:field="*{noPenjaga}" />
                     <input type="hidden" th:field="*{bioskop}" />
+                    <input type="hidden" th:field="*{noPenjaga}" />
 
                     Nama Penjaga : <br>
-                    <input required class="form-control" type="text" name="namaPenjaga" th:value="*{namaPenjaga}" />
-                    <br><br>
+                    <input required class="form-control" type="text" name="namaPenjaga" th:value="*{namaPenjaga}"/>
+                    <br>
 
                     Jenis Kelamin : <br>
-                    <select name="jenisKelamin" th:value="*{jenisKelamin}">
-                        <option value="0">Perempuan</option>
-                        <option value="1">Laki-laki</option>
+                    <select name="jenisKelamin">
+                        <option value="0" th:if="*{jenisKelamin == 0}" selected>Perempuan</option>
+                        <option value="0" th:unless="*{jenisKelamin == 0}">Perempuan</option>
+                        <option value="1" th:if="*{jenisKelamin == 1}" selected>Laki Laki</option>
+                        <option value="1" th:unless="*{jenisKelamin == 1}">Laki Laki</option>
                     </select>
+
                     <br><br>
 
                     <button class="btn btn-primary" type="submit">Submit</button>
+                    <a class="btn btn-primary" href="/">Home</a>
                 </form>
             </div>
         </div>
     </div>
-    <a class="btn btn-primary" href="/bioskop/viewall">Kembali</a>
 </div>
 
 </body>

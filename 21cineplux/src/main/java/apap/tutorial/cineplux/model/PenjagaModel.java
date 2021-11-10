@@ -19,6 +19,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "penjaga")
 public class PenjagaModel implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long noPenjaga;
@@ -32,8 +33,10 @@ public class PenjagaModel implements Serializable {
     @Column(nullable = false)
     private Integer jenisKelamin;
 
+    //Relasi dengan BioskopModel
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "no_bioskop", referencedColumnName = "noBioskop", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private BioskopModel bioskop;
+
 }

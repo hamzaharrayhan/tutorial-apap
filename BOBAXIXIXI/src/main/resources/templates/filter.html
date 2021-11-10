@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <title>View Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+
+<body style="background: #FAEBD7">
+<nav th:replace="fragments/fragment :: navbar"></nav>
+<div class="container">
+    <div class="card m-4 p-4">
+        <div class="card-body">
+            <div class="justify-content-center">
+                <h2 style="text-align: center">Filter Manager</h2>
+                <br>
+                <form method="GET" action="/filter">
+                    <div class="d-flex justify-content-center">
+                        <div>
+                            <div class="form-inline" style="text-align: center">
+                                <div class="form-group mx-sm-3 mb-2">
+                                    <select class="form-control" id="boba" name="boba">
+                                        <option value="selected" selected hidden>-- Select Boba Name --</option>
+                                        <option th:each="boba : ${listBoba}" th:value="${boba.name}" th:text="${boba.name}"></option>
+                                    </select>
+                                </div>
+                                <input type="submit" class="btn btn-primary" value="Search">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <br>
+                <table class="table">
+                    <thead class="" style="background-color: #491217">
+                    <tr style="color: white">
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Date of Birth</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr style="background-color: #ffe8a1" th:each="manager : ${listManager}">
+                        <td th:text="${manager.idManager}"></td>
+                        <td th:text="${manager.fullName}"></td>
+                        <td th:text="${manager.gender}"></td>
+                        <td th:text="${manager.date_of_birth}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
