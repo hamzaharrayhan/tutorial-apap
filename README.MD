@@ -112,20 +112,3 @@ Berguna untuk memberikan tanda pengambilan metode yang tidak terstandar untuk pr
 
 **3. Apa kegunaan atribut WebClient?**
 Menyediakan metode untuk mengirimkan data atau menerima data dari lokal, intranet maupun internet yang dapat diidentifikasi oleh URI
-
-# Lab 6
-1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda buat) konsep tersebut diimplementasi? 
- - otentikasi adalah proses identifikasi pengguna dengan menggunakan nama pengguna serta kata sandi. Otentikasi diimplementasikan pada method configAuthentication di WebSecurityConfig pada package security
-- otorisasi berguna dalam menentukan access dari suatu role serta mengatur apakah suatu role dapat memiliki akses ke sesuatu. Otorisasi diimplementasikan pada method configure di WebSecurityConfig pada package security
-
-2. Apa itu BCryptPasswordEncoder? Jelaskan secara singkat cara kerja dan tujuannya. 
-- BCryptPasswordEncoder adalah sebuah cara dalam password encoder yang digunakan pada springboot security module ketika kita melakukan encoding dan decoding untuk validasi password. BCrypt algoritma menggunakan one-way encryption. Di suatu webapp, password akan dilakukan encode untuk menjadikannya dalam bentuk terenkripsi menggunakan BCrypt algoritma. Tujuan dari penggunaan BCryptPasswordEncoder berfungsi untuk membuat database tidak dapat membaca password yang dimasukan oleh pengguna. Nantinya password yang disimpan di database adalah password yang sudah diekripsi. 
-
-3. Apakah penyimpanan password sebaiknya menggunakan encryption atau hashing? Mengapa demikian? 
-- Penyimpanan password akan lebih baik apabila menggunakan hashing dikarenakan ketika kita menggunakan enkripsi yang bersifat dua arah, server yang melakukan otentifikasi harus memiliki key untuk melakukan dekripsi untuk membaca password yang dimasukan oleh pengguna. Enkripsi  hanya bisa didekripsi dengan menggunakan key yang sesuai, oleh karena itu akan menjadi rentan oleh pencurian key dari attacker. Sementara jika menggunakan hashing yang bersifat satu arah, akan dilakukan pengacakan teks biasa sehingga menghasilkan pesan unik yang acak serta tidak dapat dibalikkan kecuali server otentikasi menggunakan id untuk melakukan pencarian inti pesan dengan benar, otentikasi dikatakan berhasil apabila pesan yang ada pada server sama dengan isi dari inti pesan.
-
-4. Jelaskan secara singkat apa itu UUID beserta penggunaannya! 
-- UUID yang memiliki kepanjangan universally unique identifier adalah bentuk angka identifikasi 128-bit yang digunakan untuk mengidentifikasi informasi atau entity yang nilainya diperlukan secara unik dalam sistem. Nomor id ini bersifat unik dan tidak akan ada satupun yang memiliki nomor id yang sama, oleh karena itu hal ini digunakan untuk keamanan.
-
-5. Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut
-- Class UserDetailsServiceImpl digunakan dalam pencarian nama pengguna, kata sandi, dan GrantedAuthorities untuk setiap pengguna tertentu. Class ini akan hanya menyediakan satu metode yang perlu diimplementasikan. Class ini akan menyimpan informasi dari pengguna yang nantinya digunakan dalam enkapsulasi untuk otentikasi. Class ini digunakan untuk berjalannya otentikasi sehingga harus selalu tersedia.
