@@ -8,6 +8,7 @@ import java.util.List;
 public interface BioskopRestService {
     BioskopModel createBioskop(BioskopModel bioskop);
     List<BioskopModel> retrieveListBioskop();
+    List<BioskopModel> retrieveListBioskopByJumlahStudio(Integer jumlahStudio);
     BioskopModel getBioskopByNoBioskop(Long noBioskop);
     BioskopModel updateBioskop(Long noBioskop, BioskopModel bioskopUpdate);
     void deleteBioskop(Long noCabang);

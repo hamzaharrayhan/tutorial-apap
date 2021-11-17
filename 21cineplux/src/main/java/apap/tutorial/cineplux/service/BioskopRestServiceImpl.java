@@ -37,6 +37,12 @@ public class BioskopRestServiceImpl implements BioskopRestService {
     }
 
     @Override
+    public List<BioskopModel> retrieveListBioskopByJumlahStudio(Integer jumlahStudio) {
+        List<BioskopModel> bioskop = bioskopDB.findAllByJumlahStudio(jumlahStudio);
+        return bioskop;
+    }
+
+    @Override
     public BioskopModel getBioskopByNoBioskop(Long noBioskop) {
         Optional<BioskopModel> bioskop = bioskopDB.findByNoBioskop(noBioskop);
         if(bioskop.isPresent()){

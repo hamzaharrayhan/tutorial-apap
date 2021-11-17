@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>21 Cineplux</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+</head>
+
+<body>
+<nav th:replace="fragments/fragment :: navbar('User')"></nav>
+<div class="container">
+    <h2>Daftar Seluruh User</h2>
+    <br>
+    <a class="btn btn-primary" href="/user/add">Tambah</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>No</th>
+            <th>Email</th>
+            <th>Nama</th>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user, iterationStatus : ${listUser}"
+            th:style="${iterationStatus.even} ? 'font-weight:bold;'">
+            <td th:text="${iterationStatus.count}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.nama}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:if="${user.role.id == 1}" th:text="'ADMIN'"></td>
+            <td th:if="${user.role.id == 2}" th:text="'MANAGER'"></td>
+            <td th:if="${user.role.id == 3}" th:text="'USER'"></td>
+            <td>
+                <a class="btn btn-danger" th:href="@{/user/delete/} + ${user.username}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="/">Home</a>
+
+</html>

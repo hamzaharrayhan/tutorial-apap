@@ -6,6 +6,8 @@ import apap.tutorial.cineplux.service.BioskopService;
 import apap.tutorial.cineplux.service.PenjagaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +30,9 @@ public class PenjagaController {
 
     @GetMapping("/penjaga/add/{noBioskop}")
     public String addPenjagaForm(@PathVariable Long noBioskop, Model model){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String role = auth.getAuthorities().toString().replace("[", "").replace("]","");
+        model.addAttribute("role", role);
         PenjagaModel penjaga = new PenjagaModel();
         BioskopModel bioskop = bioskopService.getBioskopByNoBioskop(noBioskop);
         penjaga.setBioskop(bioskop);
@@ -40,6 +45,9 @@ public class PenjagaController {
             @ModelAttribute PenjagaModel penjaga,
             Model model
     ){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String role = auth.getAuthorities().toString().replace("[", "").replace("]","");
+        model.addAttribute("role", role);
         penjagaService.addPenjaga(penjaga);
         model.addAttribute("noBioskop", penjaga.getBioskop().getNoBioskop());
         model.addAttribute("namaPenjaga", penjaga.getNamaPenjaga());
@@ -62,6 +70,9 @@ public class PenjagaController {
             @ModelAttribute PenjagaModel penjaga,
             Model model
     ){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String role = auth.getAuthorities().toString().replace("[", "").replace("]","");
+        model.addAttribute("role", role);
         LocalTime now = LocalTime.now();
         BioskopModel bioskop = penjaga.getBioskop();
         if (now.isBefore(bioskop.getWaktuBuka()) || now.isAfter(bioskop.getWaktuTutup())){
@@ -79,6 +90,9 @@ public class PenjagaController {
         @ModelAttribute BioskopModel bioskop,
         Model model
     ){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String role = auth.getAuthorities().toString().replace("[", "").replace("]","");
+        model.addAttribute("role", role);
         model.addAttribute("noBioskop", bioskop.getNoBioskop());
         int res = 1;
         for (PenjagaModel penjaga:
