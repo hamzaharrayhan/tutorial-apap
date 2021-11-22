@@ -35,16 +35,20 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public String updatePassword(UserModel user, String lama, String baru, String konfirmasi){
+    public String updatePassword(UserModel user, String lama, String baru, String konfirmasi) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         boolean isMatch = passwordEncoder.matches(lama, user.getPassword());
-        if (isMatch && baru.equals(konfirmasi)){
+        boolean sama = passwordEncoder.matches(baru, user.getPassword());
+
+        if (isMatch == false){
+            return "Password lama anda tidak sesuai";
+        } else if (baru.equals(lama) == true){
+            return "Password baru anda sama dengan password lama";
+        } else if (isMatch && baru.equals(konfirmasi)){
             user.setPassword(passwordEncoder.encode(baru));
             userDB.save(user);
             return "Password berhasil diubah";
-        } else if (isMatch == false){
-            return "Password lama anda tidak sesuai";
-        } else if (baru.equals(konfirmasi) == false){
+        } else if (baru.equals(konfirmasi) == false) {
             return "Password konfirmasi anda tidak sesuai dengan password baru";
         } else {
             return "";
