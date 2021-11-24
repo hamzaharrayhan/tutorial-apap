@@ -114,13 +114,17 @@ Berguna untuk memberikan tanda pengambilan metode yang tidak terstandar untuk pr
 Menyediakan metode untuk mengirimkan data atau menerima data dari lokal, intranet maupun internet yang dapat diidentifikasi oleh URI
 
 # Lab 7
-**1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot
+1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot
 sebagai ilustrasi dari apa yang Anda jelaskan.
-**2. Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?
+
+2. Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?
 State berperan sebagai penyimpanan data sementara dari suatu function/class component di javascript, sementara props bertindak seperti constructor dari suatu function/class component.
-**3. Menurut kamu, apakah sebaiknya kita menggunakan component (e.g. List, Item) dalam React? sebutkan alasannya.
+
+3. Menurut kamu, apakah sebaiknya kita menggunakan component (e.g. List, Item) dalam React? sebutkan alasannya.
 Iya, karena react mendukung code modular atau reusable component. Dengan hal itu, kita dapat membuat komponen-komponen kecil yang dapat digunakan kembali sehingga merampingkan project serta lebih sedikit kode.
-**4. Apa perbedaan class component dan functional component?
+
+4. Apa perbedaan class component dan functional component?
 Class component adalah metode penggunaan konsep OOP dalam javascript dan merupakan cara lama yang digunakan dalam react. Sedangkan functional component dikenalkan pada versi baru react dan memberikan simplifikasi pemanggilan state daripada class component, dengan menggunakan react hook seperti useState dan useEffect.
-**5. Dalam react, apakah perbedaan component dan element?
+
+5. Dalam react, apakah perbedaan component dan element?
 React element adalah objek yang merepresentasikan DOM seperti dalam konsep HTML seperti div, h1, button, dan sebagainya. Sementara itu component adalah sekumpulan element yang membentuk aplikasi kita, dan kumpulan komponen ini digunakan dalam view di project.
