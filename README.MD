@@ -116,6 +116,12 @@ Menyediakan metode untuk mengirimkan data atau menerima data dari lokal, intrane
 # Lab 7
 1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot
 sebagai ilustrasi dari apa yang Anda jelaskan.
+Pada nomor satu, saya menambahkan sebuah const/variabel untuk menghandle delete item dari cart, fungsinya sama seperti function handle add item to cart. Tetapi props inCart dijadikan false.
+
+Untuk nomor 2, dilakukan pengambilan harga dari item yang akan ditambah maupun dihapus dari cart & shop. Kemudian ditambahkan dengan nilai balance pada state. Selanjutnya dilakukan setState untuk balance berdasarkan hasil jumlah atau kurang sebelumnya.
+
+Untuk nomor 3 hanya dilakukan penambahan komponen alert() bawaan dari react.js, sebelumnya diberikan conditional bila balance tidak sesuai kondisi yang seharusnya.
+![image](https://user-images.githubusercontent.com/61260701/143251243-a1f95867-18db-4196-b084-3d63eaa6fe87.png)
 
 2. Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?
 State berperan sebagai penyimpanan data sementara dari suatu function/class component di javascript, sementara props bertindak seperti constructor dari suatu function/class component.
