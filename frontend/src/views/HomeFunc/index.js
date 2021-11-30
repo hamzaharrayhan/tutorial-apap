@@ -65,6 +65,16 @@ function App() {
         setBalance(totalPrice);
         setCartItems(newItems);
     };
+    
+    const deleteAllItems = () => {
+        var totalPrice = 0
+        cartItems.map(items => (
+            totalPrice += parseFloat(items.price),
+            updateShopItem(items,false)
+        ))
+        setBalance(parseFloat(balance)+totalPrice)
+        setCartItems([])
+    }
 
     return (
         <div className="container-fluid">
@@ -88,6 +98,7 @@ function App() {
                 <div className="row mt-3">
                     {!cartHidden ? (
                         <div className="col-sm">
+                            <button type="submit" onClick={deleteAllItems}>Delete All Item</button>
                             <List
                                 title="My Cart"
                                 items={cartItems}
