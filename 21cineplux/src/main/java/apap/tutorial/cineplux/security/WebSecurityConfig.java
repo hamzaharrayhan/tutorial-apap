@@ -17,30 +17,25 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception{
-        http
-                .authorizeRequests()
-                .antMatchers("/css/**").permitAll()
-                .antMatchers("/js/**").permitAll()
-                .and()
-                .formLogin()
-                .loginPage("/login").permitAll()
-                .and()
-                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login").permitAll();
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests().antMatchers("/css/**").permitAll().antMatchers("/js/**").permitAll().and().formLogin()
+                .loginPage("/login").permitAll().and().logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login").permitAll();
     }
 
     @Bean
-    public BCryptPasswordEncoder encoder(){
+    public BCryptPasswordEncoder encoder() {
         return new BCryptPasswordEncoder();
     }
 
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
-//        auth.inMemoryAuthentication()
-//                .passwordEncoder(encoder())
-//                .withUser("nontonFilm").password(encoder().encode("21cineplux"))
-//                .roles("ADMIN");
-//    }
+    // @Autowired
+    // public void configureGlobal(AuthenticationManagerBuilder auth) throws
+    // Exception{
+    // auth.inMemoryAuthentication()
+    // .passwordEncoder(encoder())
+    // .withUser("nontonFilm").password(encoder().encode("21cineplux"))
+    // .roles("ADMIN");
+    // }
 
     @Autowired
     private UserDetailsService userDetailsService;
