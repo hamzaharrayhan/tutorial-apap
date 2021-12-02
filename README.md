@@ -131,27 +131,28 @@ Iya, karena react mendukung code modular atau reusable component. Dengan hal itu
 
 4. Apa perbedaan class component dan functional component?
 Class component adalah metode penggunaan konsep OOP dalam javascript dan merupakan cara lama yang digunakan dalam react. Sedangkan functional component dikenalkan pada versi baru react dan memberikan simplifikasi pemanggilan state daripada class component, dengan menggunakan react hook seperti useState dan useEffect.
+
+5. Dalam react, apakah perbedaan component dan element?
+React element adalah objek yang merepresentasikan DOM seperti dalam konsep HTML seperti div, h1, button, dan sebagainya. Sementara itu component adalah sekumpulan element yang membentuk aplikasi kita, dan kumpulan komponen ini digunakan dalam view di project.
+
+# Tutorial 8
+1. Ceritakan langkah - langkah yang kalian lakukan untuk solve LATIHAN no.1, dan mengapa kalian melakukan langkah - langkah tersebut?
+Langkah yang dilakukan adalah dengan cara menambahkan this.setState kembali dan menset semua state seperti id, title, price, description, category, dan quantity di reset untuk yang string menjadi "" dan apabila integer atau angka menjadi 0. Hal ini akan mengubah state menjadi nilai tersebut dan menjadi nilai kosong ketika dipanggil handler untuk add Item di lain waktu.
+
+
+2. Jelaskan fungsi dari async dan await! 
+Fungsi async adalah fungsi yang dideklarasikan dengan kata ‘async’, dan kata kunci ‘await’ diperlukan untuk digunakan di dalamnya. Kata kunci ‘async’ dan ‘await’ memungkinkan perilaku berbasis promises asinkron untuk dapat ditulis dengan gaya penulisan yang lebih teratur, menghindari kebutuhan untuk mengkonfigurasi rantai promise secara eksplisit.
+
+3. Fungsi async dapat berisi nol atau lebih ekspresi await. Ekspresi await membuat fungsi yang mengembalikan promise berperilaku seolah-olah mereka sinkron dengan menunggu eksekusi hingga promise yang dikembalikan dipenuhi atau ditolak. Nilai yang diselesaikan dari promise diperlakukan sebagai nilai return dari ekspresi await. Penggunaan async dan await memungkinkan penggunaan blok try/catch di sekitar kode async.
+
+4. Masukkan jawaban dari Screenshot yang diperintahkan di halaman 9 pada Component Lifecycle pada pertanyaan ini. 
 ![image](https://user-images.githubusercontent.com/61260701/144418779-6c6364d4-2ac2-4a32-8fc7-b35877400885.png)
 ![image](https://user-images.githubusercontent.com/61260701/144418854-e6b8d654-0aaf-498a-8ca6-018bf2ef72b1.png)
 ![image](https://user-images.githubusercontent.com/61260701/144418888-661b83ac-96a8-4f63-8bb0-b660cfeb2f3f.png)
 ![image](https://user-images.githubusercontent.com/61260701/144418903-80efe903-e0ea-44ba-8454-a62145fa6123.png)
 ![image](https://user-images.githubusercontent.com/61260701/144418919-0bd7fb24-e969-4d5b-9386-850baa6c7475.png)
 
-5. Dalam react, apakah perbedaan component dan element?
-React element adalah objek yang merepresentasikan DOM seperti dalam konsep HTML seperti div, h1, button, dan sebagainya. Sementara itu component adalah sekumpulan element yang membentuk aplikasi kita, dan kumpulan komponen ini digunakan dalam view di project.
-
-Ceritakan langkah - langkah yang kalian lakukan untuk solve LATIHAN no.1, dan mengapa kalian melakukan langkah - langkah tersebut?
-Langkah yang dilakukan adalah dengan cara menambahkan this.setState kembali dan menset semua state seperti id, title, price, description, category, dan quantity di reset untuk yang string menjadi "" dan apabila integer atau angka menjadi 0. Hal ini akan mengubah state menjadi nilai tersebut dan menjadi nilai kosong ketika dipanggil handler untuk add Item di lain waktu.
-
-
-Jelaskan fungsi dari async dan await! 
-Fungsi async adalah fungsi yang dideklarasikan dengan kata ‘async’, dan kata kunci ‘await’ diperlukan untuk digunakan di dalamnya. Kata kunci ‘async’ dan ‘await’ memungkinkan perilaku berbasis promises asinkron untuk dapat ditulis dengan gaya penulisan yang lebih teratur, menghindari kebutuhan untuk mengkonfigurasi rantai promise secara eksplisit.
-
-Fungsi async dapat berisi nol atau lebih ekspresi await. Ekspresi await membuat fungsi yang mengembalikan promise berperilaku seolah-olah mereka sinkron dengan menunggu eksekusi hingga promise yang dikembalikan dipenuhi atau ditolak. Nilai yang diselesaikan dari promise diperlakukan sebagai nilai return dari ekspresi await. Penggunaan async dan await memungkinkan penggunaan blok try/catch di sekitar kode async.
-
-Masukkan jawaban dari Screenshot yang diperintahkan di halaman 9 pada Component Lifecycle pada pertanyaan ini. 
-
-Jelaskan fungsi dari componentDidMount, shouldComponentUpdate, componentDidUpdate, componentWillReceiveProps, componentWillUnmount. 
+5. Jelaskan fungsi dari componentDidMount, shouldComponentUpdate, componentDidUpdate, componentWillReceiveProps, componentWillUnmount. 
 Notes : Penjelasan harus mencantumkan “kapan fungsi dipanggil” dan “use case apa saja yang biasanya menggunakan lifecycle method tersebut”.
 
 - componentDidMount : Fungsi ini akan dipanggil ketika seluruh component nya akan siap untuk dilakukan rendering, use casenya adalah ketika kita ingin mengetahui kapan dan apakah komponen tersebut dibuat.
